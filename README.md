@@ -78,4 +78,4 @@ If you don't know the eigen type (symmetric or non symmetric, complex or real), 
 C) How to compile?
 MatModule relies on LAPACK.
 
-gfortran yourprogram.f90 matmodule.f90 -o yourprogram `pkg-config --libs lapack`
+    gfortran yourprogram.f90 matmodule.f90 -o yourprogram `pkg-config --libs lapack`
