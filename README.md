@@ -10,46 +10,46 @@ For all of the following functions or subroutines, the argument can be either re
 
 1) .m. operator : multiplying two real/complex matrices
 
-REAL (kind=SELECTED_REAL_KIND(14)), DIMENSION(1000,1000)  :: a , b , c
-!!! suppose you have filled a and b with data and want c=a*b
-c= a .m. b
+    REAL (kind=SELECTED_REAL_KIND(14)), DIMENSION(1000,1000)  :: a , b , c
+    !!! suppose you have filled a and b with data and want c=a*b
+    c= a .m. b
 
 2) .d. operator : dividing two real/complex matrices
 
-COMPLEX (kind=SELECTED_REAL_KIND(14)), DIMENSION(1000,1000)  :: a , b , x
-!!! suppose you have filled a and b with data and want to solve ax=b
-x= b .d. a
+    COMPLEX (kind=SELECTED_REAL_KIND(14)), DIMENSION(1000,1000)  :: a , b , x
+    !!! suppose you have filled a and b with data and want to solve ax=b
+    x= b .d. a
 
 3) LU of a matrix :
 
-lu(a)
+    lu(a)
 
 4) Determinant of a real/complex matrix:
 
-det(a)
+    det(a)
 
 5) Inverse of a matrix:
 
-inv(a)
+    inv(a)
 
 6) Are two matrices a and b equal?
 
-IF (a .meq. b) 
+    IF (a .meq. b) 
 
 7) writing a matrix to a file in a nice, distinct, understandable way:
 
-CALL matwrite (a)
+    CALL matwrite (a)
 
 8) the almighty eig function!
 
-CLASS (eigen), POINTER :: ans
-COMPLEX(KIND=dp), DIMENSION(n,n) :: a, lvec, rvec
-COMPLEX(KIND=dp), DIMENSION(n) :: valc
-! suppose you have filled a with data 
-ans => eig(a)
-lvec=ans%lgetleigvec() ! Get left eigen vectors 
-rvec=ans%getreigvec()  ! Get right eigen vectors
-valc=ans%geteigval()    ! Get the eigen values
+    CLASS (eigen), POINTER :: ans
+    COMPLEX(KIND=dp), DIMENSION(n,n) :: a, lvec, rvec
+    COMPLEX(KIND=dp), DIMENSION(n) :: valc
+    ! suppose you have filled a with data 
+    ans => eig(a)
+    lvec=ans%lgetleigvec() ! Get left eigen vectors 
+    rvec=ans%getreigvec()  ! Get right eigen vectors
+    valc=ans%geteigval()    ! Get the eigen values
 
 If you don't know the eigen type (symmetric or non symmetric, complex or real), define the needed arrays/matrices and use the select case method:
     
